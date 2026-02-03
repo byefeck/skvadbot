@@ -7,7 +7,6 @@ COPY requirements.txt* ./
 COPY bot.py .
 COPY комплименты.csv .
 COPY цитаты.csv .
-COPY DATA.csv .
 
 # Устанавливаем зависимости
 RUN pip install --no-cache-dir -r requirements.txt
