@@ -102,7 +102,7 @@ with open('DATA.csv', 'r', encoding='UTF-8') as file:
     for i in csv.reader(file):
         if i[5].startswith('@'):
             DATA.append(i)
-usernames = [y for x in DATA for y in x if y.startswith('@')]
+usernames = ['@shpolina_a', '@zhilinka007', '@foryoung2', '@Danikkmeeell', '@IAmSlam', '@lazy_mud']
 
 def find_user(message: types.Message):
     args = message.text.split()
