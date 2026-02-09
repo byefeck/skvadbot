@@ -98,10 +98,6 @@ with open('комплименты.csv', 'r', encoding='UTF-8') as comp:
 
 DATA = []
 orgcom = ['@diaa_le', '@aamdenisov', '@DmitriyIkhsanov', '@DmitriyIkhsanov', '@nikiforovau', '@Polyakovaaa', '@ulbnv']
-with open('DATA.csv', 'r', encoding='UTF-8') as file:
-    for i in csv.reader(file):
-        if i[5].startswith('@'):
-            DATA.append(i)
 usernames = ['@shpolina_a', '@zhilinka007', '@foryoung2', '@Danikkmeeell', '@IAmSlam', '@lazy_mud', '@Pockemon05']
 
 def find_user(message: types.Message):
@@ -418,7 +414,8 @@ async def action_cmd(message: types.Message):
         await message.reply('Введите в формате\n/[действие] @username')
     else:
         text = random.choice(ACTIONS[command]).format(from_user=from_user, to_user=to_user)
-        await message.reply(text)
+        await message.answer(text)
+        await message.delete()
 
 @dp.message()
 async def save_users(message: types.Message):
